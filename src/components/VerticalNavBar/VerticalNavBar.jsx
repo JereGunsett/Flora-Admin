@@ -1,16 +1,15 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+import { Nav, NavDropdown } from 'react-bootstrap';
 import './VerticalNavBar.css';
+import { Link } from 'react-router-dom';
 
 export const VerticalNavBar = () => {
   return (
     <Nav className="vertical-nav flex-column">
-      <Nav.Item>Flora-Admin</Nav.Item>
-      <Nav.Link href='#Inicio'>Inicio</Nav.Link>
-      <Nav.Link href="#home">Productos</Nav.Link>
-      <Nav.Link href="#features">Noticias</Nav.Link>
-      <Nav.Link href="#pricing">Seguridad</Nav.Link>
-      {/* Agrega más enlaces aquí */}
+        <NavDropdown.Item className="nav-dropdown-item" as={Link} to='/'>Inicio</NavDropdown.Item>
+        <NavDropdown.Item className="nav-dropdown-item" as={Link} to="/productos">Productos</NavDropdown.Item>
+        <NavDropdown.Item className="nav-dropdown-item" as={Link} to="/noticias">Noticias</NavDropdown.Item>
+        <NavDropdown.Item className="nav-dropdown-item" as={Link} to="/seguridad">Seguridad</NavDropdown.Item>
     </Nav>
   );
 };
