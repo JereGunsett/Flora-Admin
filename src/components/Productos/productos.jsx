@@ -36,14 +36,14 @@ export const Productos = () => {
           <div className="loader">
             <ImSpinner3 className="loader-icon" />
           </div> :
-          <Table striped border hover>
+          <Table bordered hover>
             <thead>
               <tr>
+				<th>ID</th>
                 <th>Nombre</th>
                 <th>Precio</th>
                 <th>Categoria</th>
                 <th>Cantidad</th>
-                <th>Descripcion</th>
                 <th>Imagen</th>
                 <th>Acciones</th>
               </tr>
@@ -53,12 +53,12 @@ export const Productos = () => {
                 productos.map((producto) => {
                   return (
                     <tr key={producto.id}>
+                      <td>{producto.id}</td>
                       <td>{producto.nombre}</td>
                       <td>{producto.precio}</td>
                       <td>{producto.categoria}</td>
                       <td>{producto.cantidad}</td>
-                      <td>{producto.descripcion}</td>
-                      <td><img src={producto.imagen} alt="imagen"/></td>
+                      <td><img src='{producto.imagen}' alt="imagen"/></td>
                       <td>
                         <Link to={`/productos/${producto.id}`}>
                           <button className="btn btn-primary">Editar</button>
