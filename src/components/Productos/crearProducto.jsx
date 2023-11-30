@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const CrearProducto = () => {
     const navigate = useNavigate();
     const [categorias, setCategorias] = useState([]);
@@ -60,11 +61,10 @@ const CrearProducto = () => {
                     ...formulario,
                     precio,
                     cantidad,
-                    idCategoria,  // Usar el mismo nombre que en el formulario
+                    idCategoria,
                 }),
             });
 
-            // Resto del código...
         } catch (error) {
             console.error('Error al crear el producto:', error);
         }

@@ -11,7 +11,7 @@ function Productos() {
   const [productos, setProductos] = useState([]);
   const [categorias, setCategorias] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,12 +45,10 @@ function Productos() {
     }, []);
 
   const handleEdit = (id) => {
-    // Lógica para editar el producto con el ID dado
     console.log(`Editar producto con ID ${id}`);
   };
 
   const handleDelete = (id) => {
-    // Lógica para eliminar el producto con el ID dado
     console.log(`Eliminar producto con ID ${id}`);
   };
 
@@ -82,7 +80,6 @@ function Productos() {
                     <td>{producto.cantidad}</td>
                     <td>{producto.descripcion}</td>
                     <td>
-                      {/* Encuentra la categoría correspondiente según el id */}
                       {categorias.find((categoria) => categoria.id === producto.idCategoria)?.nombre || 'Sin categoría'}
                     </td>
                     <td>
