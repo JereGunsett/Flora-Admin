@@ -5,6 +5,7 @@ import Productos from './components/Productos/productos';
 
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import EditarProducto from './components/Productos/editarProducto';
+import CrearProducto from "./components/Productos/crearProducto";
 
 
 
@@ -17,7 +18,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/productos" element={<Productos />} />
-				<Route path=":id" element={<EditarProducto/>} />
+            <Route path="/productos/nuevo" element={<CrearProducto />} />
+            <Route path="/productos/:id" element={<EditarProducto />} />
           </Routes>
         </BrowserRouter>
       </div>
